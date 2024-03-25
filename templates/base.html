@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>{% block title %}{{ title }}{% endblock %}</title>
+    {% block head %}{% endblock %}
+    <script src="https://unpkg.com/htmx.org@1.9.11"></script>
+    <link rel="stylesheet" href="/public/index.css" />
+    <script src="/public/index.js"></script>
+    <script>
+      console.log("test")
+    </script>
+  </head>
+  <body class="w-screen h-screen uppercase">
+    <div id="content" class="w-full h-full">
+      {% block content %}
+      <p class="text-xl text-slate-800">Hello, Roux</p>
+      {% endblock %}
+    </div>
+  </body>
+</html>
