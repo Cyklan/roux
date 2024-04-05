@@ -5,7 +5,7 @@ Roux is a template for a Rust-Powered HTMX fullstack application.
 The tech stack includes:
 
 - [x] rust (obviously)
-- [x]HTMx (also obviously)
+- [x] HTMx (also obviously)
 - [x] Askama templating engine
 - [x] Tailwind
 - [x] Lit.js (web components)
