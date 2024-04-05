@@ -23,21 +23,13 @@ async fn js() -> Response {
         .body(EMBEDDED_JS)
 }
 
-#[handler]
-async fn my_element() -> Response {
-    Response::builder()
-        .header("Content-Type", "text/html")
-        .body("<my-element name=\"mom ❤️\" id=\"foo\"></my-element>")
-}
-
 #[tokio::main]
 async fn main() -> Result<(), std::io::Error> {
     let app = Route::new()
         .nest("/", routes::index::routes())
         .at("/public/index.css", get(css))
         .at("/public/index.js", get(js))
-        .nest("/public", StaticFilesEndpoint::new(public_dir()?))
-        .at("/my-element", get(my_element));
+        .nest("/public", StaticFilesEndpoint::new(public_dir()?));
 
     Server::new(TcpListener::bind("0.0.0.0:3000"))
         .run(app)

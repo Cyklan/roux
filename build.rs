@@ -19,6 +19,11 @@ fn main() {
         println!("cargo:rerun-if-changed={}", entry.path().display());
     }
 
+    println!("cargo:rerun-if-changed=tailwind.config.js");
+    println!("cargo:rerun-if-changed=vite.config.mjs");
+    println!("cargo:rerun-if-changed=tsconfig.json");
+    println!("cargo:rerun-if-changed=package.json");
+
     println!("cargo:rerun-if-changed=build.rs");
 }
 

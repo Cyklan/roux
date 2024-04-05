@@ -8,12 +8,14 @@
     <link rel="stylesheet" href="/public/index.css" />
     <script type="module" src="/public/index.js"></script>
   </head>
-  <body class="w-screen h-screen">
-    <div id="content" class="w-full h-full">
-      {% block content %}
-      <!-- <p class="text-xl text-slate-800">Hello, Roux</p> -->
-      <my-element id="foo"></my-element>
-      {% endblock %}
+  <body class="w-screen h-screen bg-gradient-to-br from-[#d3cce3] to-[#e9e4f0]">
+    <div
+      id="content"
+      class="w-full h-full flex justify-center items-center gap-12 flex-col"
+    >
+      <span class="text-5xl font-bold text-main">Welcome To Roux</span>
+      <htmx-counter id="counter"></htmx-counter>
+      {% block content %} {% endblock %}
     </div>
   </body>
 </html>
