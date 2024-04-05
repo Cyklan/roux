@@ -6,7 +6,6 @@ use poem::{
 
 mod routes;
 
-// const EMBEDDED_CSS: &[u8] = include_bytes!(concat!(env!("OUT_DIR"), "/public/index.css"));
 const EMBEDDED_CSS: &'static str = include_str!(concat!(env!("OUT_DIR"), "/style.css"));
 const EMBEDDED_JS: &'static str = include_str!(concat!(env!("OUT_DIR"), "/index.mjs"));
 
@@ -49,6 +48,5 @@ fn public_dir() -> io::Result<PathBuf> {
     let mut path = std::env::current_exe()?;
     path.pop();
     path.push("public");
-    println!("public dir: {:?}", path);
     Ok(path)
 }
