@@ -5,6 +5,7 @@ use poem::{handler, middleware::SetHeader, web::Path, EndpointExt};
 #[template(path = "base.html")]
 struct BaseTemplate<'a> {
     title: &'a str,
+    nav_target: &'a str,
 }
 
 #[derive(Template)]
@@ -17,6 +18,7 @@ struct CounterTemplate {
 pub fn get() -> String {
     let base = BaseTemplate {
         title: "Rust, HTMX and Web Components!",
+        nav_target: "/foo",
     };
     base.render().unwrap()
 }

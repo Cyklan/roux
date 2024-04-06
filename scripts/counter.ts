@@ -8,6 +8,7 @@ export class HTMXCounter extends WebComponent {
   count = 0;
 
   render() {
+    // treat the returned html in a react fashion, only returning one "root" element with multiple childrens
     return html`<button
       hx-swap="outerHTML"
       hx-get="/counter/${this.count}"

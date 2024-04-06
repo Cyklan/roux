@@ -27,6 +27,7 @@ async fn js() -> Response {
 async fn main() -> Result<(), std::io::Error> {
     let app = Route::new()
         .nest("/", routes::index::routes())
+        .nest("/foo", routes::foo::routes())
         .at("/public/index.css", get(css))
         .at("/public/index.js", get(js))
         .nest("/public", StaticFilesEndpoint::new(public_dir()?));

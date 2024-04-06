@@ -16,6 +16,10 @@
       <span class="text-5xl font-bold text-main">Welcome To Roux</span>
       <htmx-counter id="counter"></htmx-counter>
       {% block content %} {% endblock %}
+
+      <div hx-boost="true">
+        <a href="{{ nav_target }}">Go to {{ nav_target }}</a>
+      </div>
     </div>
   </body>
 </html>
