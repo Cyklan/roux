@@ -11,7 +11,7 @@ import styles from "../styles.css?inline";
  * We don't need the shadow dom, all cool interactions are done with HTMx.
  */
 export class WebComponent extends LitElement {
-  static styles?: CSSResultGroup | undefined = [unsafeCSS(styles)];
+  static readonly styles?: CSSResultGroup = [unsafeCSS(styles)];
 
   protected updated(
     _changedProperties: PropertyValueMap<any> | Map<PropertyKey, unknown>
